@@ -1,2 +1,5 @@
 #!/usr/bin/env ruby 
 
+require "./lib/zzounds_deals"
+
+ZzoundsDeals::CLI.new.call

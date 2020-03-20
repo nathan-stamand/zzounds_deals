@@ -1,6 +1,4 @@
-require "zzounds_deals/version"
-
-module ZzoundsDeals
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "./zzounds_deals/version"
+require_relative "./zzounds_deals/cli"
+require_relative "./zzounds_deals/scraper"
+require_relative "./zzounds_deals/deal"
