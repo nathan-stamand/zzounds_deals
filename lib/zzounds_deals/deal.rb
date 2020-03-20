@@ -1,0 +1,3 @@
+class ZzoundsDeals::Deal
+
+end
