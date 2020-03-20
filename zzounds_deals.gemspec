@@ -6,17 +6,17 @@ Gem::Specification.new do |spec|
   spec.authors       = ["nathan-stamand"]
   spec.email         = ["nathansaint810@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{'Pulls deals from Zzounds website for the user.'}
+  spec.description   = %q{"The user is presented with a list of deals from zzounds.com and can select certain deals to get more details about it."}
+  spec.homepage      = "https://github.com/nathan-stamand/zzounds_deals"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+  spec.metadata["allowed_push_host"] = "http://mygemserver.com"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://github.com/nathan-stamand/zzounds_deals"
+  spec.metadata["changelog_uri"] = "https://github.com/nathan-stamand/zzounds_deals"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -28,6 +28,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'nokogiri'
-  spec.add_dependency 'open-uri'
   spec.add_development_dependency 'pry'
 end
