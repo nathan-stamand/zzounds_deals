@@ -28,7 +28,7 @@ class Scraper
         specs = description.css('div#tab-product-specs').text
         reviews = description.css('div#reviews').text
         payments = (deal.price.gsub('$', '').to_f/6).ceil(2)
-        puts "6 monthly payments of $#{payments}"
+        puts "Pay this off with 6 monthly payments of $#{payments}"
         puts "Type number for more information: "
         puts "1. Overview"
         puts "2. Specs"
