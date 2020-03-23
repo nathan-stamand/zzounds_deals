@@ -1,8 +1,6 @@
 # ZzoundsDeals
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/zzounds_deals`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to ZzoundsDeals! This gem scrapes deal information from Zzounds' website and displays it for you! You can simply type the number next to the item you want more information on, and a menu with more options for what you want to read about the item will display. From there, you can easily follow the instructions and get what you're looking for! Thanks for checking this out!
 
 ## Installation
 
@@ -22,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Upon opening, you should see a list of 10 - 12 'deals' from which you can select. When you see one you would like to know more about, type *only* its number, and hit enter. You should now see the information for the item previously displayed as well as a new user menu.
+
+From here, you can select the Overview (type 1, then enter) for a brief (professionally written) description of the item, Specs (2, then enter) for more technical information of what is included with the item as well as its more literal descriptors, Reviews (3, enter) to see some top reviews of the item, or you may return to the full list of items (4, enter) or exit the application altogether (5, enter). 
 
 ## Development
 
