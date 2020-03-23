@@ -38,9 +38,8 @@ class ZzoundsDeals::CLI
             elsif input.to_i > 0 && input.to_i <= @deals.length
                 input = input.to_i - 1
                 puts "#{format(@deals[input])}"
-                Scraper.more_info(@deals[input].url)
-                puts "#{Scraper.more_info(@deals[input].url)}"
-                puts "Type and enter 'list' to return to the main list, or 'exit' to exit the program."
+                Scraper.more_info(@deals[input])
+                list_items
             elsif input.to_i == 0 || input.to_i > @deals.length
                 puts "Please select a valid option from the numbers on the list, or type 'list' or 'exit'"
             end 

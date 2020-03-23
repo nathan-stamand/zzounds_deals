@@ -20,4 +20,37 @@ class Scraper
             i += 1
         end
     end 
+
+    def self.more_info(deal)
+        doc = Nokogiri::HTML(open(deal.url))
+        description = doc.css('div.span-43.prepend-1.prepend-top').css('div #tabs-bd-container')
+        overview = description.css('div#tab-product-overview').text
+        specs = description.css('div#tab-product-specs').text
+        payments = (deal.price.gsub('$', '').to_f/6).ceil(2)
+        puts "6 monthly payments of $#{payments}"
+        puts "Type number for more information: "
+        puts "1. Overview"
+        puts "2. Specs"
+        puts "3. Reviews"
+        puts "4. Return to List"
+        puts "5. Exit Application"
+        input = nil
+        while input != '5'
+            input = gets.strip.to_i
+            case input 
+                when 0 
+                    "Please enter valid number for more information. Enter 4 to return to list, or 5 to exit the application."
+                when 1
+                    puts "#{overview}"
+                when 2 
+                    puts "#{specs}"
+                when 3 
+                    puts "#{reviews}"
+                when 4 
+                    input = '5'
+                when 5 
+                    exit
+            end
+        end
+    end 
 end 
