@@ -1,22 +1,30 @@
 class ZzoundsDeals::CLI
-
+    attr_accessor :deals
     def call 
         puts "Hello! Here are your daily deals!"
+        Scraper.get_deals
         list_items
         menu
         goodbye
     end 
 
     def list_items 
-        puts "1. Pioneer DJ DDJ-SX3 Professional DJ Controller"
-        puts "   $914.95"
-        puts "   Blemished"
-        puts "   only 1 left!"
-        puts "   Save $84.05 off new!"
+        @deals = ZzoundsDeals::Deal.all 
+        i = 0
+        @deals.each do |item|
+            puts "#{@deals[i].number}. #{@deals[i].name}"
+            puts "     #{@deals[i].details}"
+            puts "     Cost: #{@deals[i].price}"
+            puts "     Savings: #{@deals[i].savings}"
+            puts "     Remaining: #{@deals[i].amt_remain}"
+            puts "     URL: #{@deals[i].url}"
+            puts ''
+            i += 1
+        end
+        puts "Select the number of the item you would like more information on, type and enter 'list' to return to all of the items, or type and enter 'exit' to leave!"
     end 
 
-    def menu 
-        puts "Select the number of the item you would like more information on, type and enter 'list' to return to all of the items, or type and enter 'exit' to leave!"
+    def menu
         input = nil 
         while input != 'exit'
             input = gets.strip 
