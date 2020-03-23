@@ -26,6 +26,7 @@ class Scraper
         description = doc.css('div.span-43.prepend-1.prepend-top').css('div #tabs-bd-container')
         overview = description.css('div#tab-product-overview').text
         specs = description.css('div#tab-product-specs').text
+        reviews = description.css('div#reviews').text
         payments = (deal.price.gsub('$', '').to_f/6).ceil(2)
         puts "6 monthly payments of $#{payments}"
         puts "Type number for more information: "
