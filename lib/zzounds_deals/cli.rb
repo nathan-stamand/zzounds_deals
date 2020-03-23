@@ -37,7 +37,7 @@ class ZzoundsDeals::CLI
                 list_items
             elsif input.to_i > 0
                 input = input.to_i 
-                puts "#{@deals[input]}"
+                puts "#{format(@deals[input])}"
             end 
         end 
     end 
