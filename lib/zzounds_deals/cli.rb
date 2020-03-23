@@ -11,27 +11,33 @@ class ZzoundsDeals::CLI
     def list_items 
         @deals = ZzoundsDeals::Deal.all 
         i = 0
-        @deals.each do |item|
-            puts "#{@deals[i].number}. #{@deals[i].name}"
-            puts "     #{@deals[i].details}"
-            puts "     Cost: #{@deals[i].price}"
-            puts "     Savings: #{@deals[i].savings}"
-            puts "     Remaining: #{@deals[i].amt_remain}"
-            puts "     URL: #{@deals[i].url}"
-            puts ''
+        @deals.each do |deal|
+            format(deal)
             i += 1
         end
         puts "Select the number of the item you would like more information on, type and enter 'list' to return to all of the items, or type and enter 'exit' to leave!"
     end 
 
+    def format(deal)
+        puts "#{deal.number}. #{deal.name}"
+            puts "     #{deal.details}"
+            puts "     Cost: #{deal.price}"
+            puts "     Savings: #{deal.savings}"
+            puts "     Remaining: #{deal.amt_remain}"
+            puts "     URL: #{deal.url}"
+            puts ''
+    end
+
     def menu
+        puts '...'
         input = nil 
         while input != 'exit'
             input = gets.strip 
             if input == 'list'
                 list_items
-            elsif input == '1'
-                puts 'more info on 1'
+            elsif input.to_i > 0
+                input = input.to_i 
+                puts "#{@deals[input]}"
             end 
         end 
     end 
