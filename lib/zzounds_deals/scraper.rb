@@ -14,7 +14,7 @@ class Scraper
             amt_remain = doc.css('div.span-15.last.bd')[i].text.split.select{|x| x.to_i > 0 && x.length == 1}[0]
             savings = doc.css('div.span-15.last.bd')[i].text.split.select{|x| x[0] == '$'}[1]
             url = doc.css('a')[i].attr('href')
-            puts savings
+            
             ZzoundsDeals::Deal.new(name, price, details, amt_remain, url, savings)
 
             i += 1
