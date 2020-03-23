@@ -35,10 +35,12 @@ class ZzoundsDeals::CLI
             input = gets.strip 
             if input == 'list'
                 list_items
-            elsif input.to_i > 0
+            elsif input.to_i > 0 && input.to_i <= @deals.length
                 input = input.to_i - 1
                 puts "#{format(@deals[input])}"
                 puts "Type and enter 'list' to return to the main list, or 'exit' to exit the program."
+            elsif input.to_i == 0 || input.to_i > @deals.length
+                puts "Please select a valid option from the numbers on the list, or type 'list' or 'exit'"
             end 
         end 
     end 
